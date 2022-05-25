@@ -1,0 +1,39 @@
+body {
+    margin:0;
+}
+
+header {
+    background-color: black;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar-main {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+   
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+    display: inline-flex;
+    align-items: center;
+    color: aliceblue;
+    font-size: 40px;
+}
+
+li  {
+    text-align: center;
+    padding: 0px 20px;
+    text-decoration: none;
+  }
+
+.active {
+    background-color: #04AA6D;
+  }
