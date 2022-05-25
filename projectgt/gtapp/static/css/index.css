@@ -28,6 +28,10 @@ ul li {
     font-size: 40px;
 }
 
+ul li:hover {
+    color: red;
+}
+
 li  {
     text-align: center;
     padding: 0px 20px;
@@ -37,3 +41,29 @@ li  {
 .active {
     background-color: #04AA6D;
   }
+
+div.row {
+    display: block;
+    justify-content: center;
+    width: 100%;
+}
+
+div.row h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 60px;
+    color: #05462ea6;
+    display: flex;
+    justify-content: center;
+}
+
+.container-img {
+    display: flex;
+    justify-content: center;
+}
+
+
+.container-img picture img {
+    height: 600px;
+    width: 80em;
+}
+  

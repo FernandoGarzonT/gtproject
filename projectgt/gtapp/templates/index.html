@@ -1,4 +1,5 @@
 {% extends "base_index.html" %}
+{% load static %}
 
 {% block content %}
     <header>
@@ -14,4 +15,13 @@
             </ul>
         </div>
     </header>
+    <div class="row" style="padding:30px;margin-top:30px;"> 
+        {% csrf_token %}
+        <h1>&#10055; Welcome to GT APP &#10055;</h1>
+        <div class="container-img">
+            <picture>        
+                <img src="{% static 'images/paisaje1.jpg' %}" alt="Paisaje">     
+            </picture>
+        </div>
+    </div>
 {% endblock content %}
