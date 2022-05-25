@@ -1,0 +1,6 @@
+p, #back {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 40px;
+}

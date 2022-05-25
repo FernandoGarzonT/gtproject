@@ -1,0 +1,25 @@
+{% extends "base_imagen.html" %}
+{% load static %}
+
+{% block content %}
+    {% csrf_token %}
+    {% if context_imagen %}
+        {% for Imagen in context_imagen  %}
+            <div class="col-2">
+                <div class="card" style="width: 17rem;" data-layer="0">
+                    <img src="{{ Imagen.image_location }}" alt="{{ Imagen.name_imagen }}">              
+                    <div class="card-body">
+                        <h5 class="card-title">{{ Imagen.name_imagen }}</h5>
+                        <p class="card-text">{{ Imagen.text_imagen }}.</p>
+                    </div>  
+                </div>
+            </div>
+        {% endfor %}      
+    {% else %}
+        <br> <br> <br>
+        <p>No Imagen are available</p>
+    {% endif %}
+    <br> <br> <br>
+    <hr>
+    <a id="back" href="{% url 'gtapp:index' %}">Back to page main?</a>
+{% endblock content %}
