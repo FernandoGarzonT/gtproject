@@ -4,3 +4,28 @@ p, #back {
     text-decoration: none;
     font-size: 40px;
 }
+
+.card-text {
+    font-size: 20px;
+    text-align: justify;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 20px;
+}
+img {
+    height: 300px;
+    width: 400px;
+}
+
+.flex-container {
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: center;
+}
+
+.col {
+    padding: 30px 30px 30px 30px;
+}

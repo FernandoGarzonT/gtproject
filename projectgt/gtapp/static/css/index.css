@@ -64,5 +64,8 @@ div.row h1 {
 .container-img picture img {
     height: 600px;
     width: 80em;
+    image-rendering: optimizeQuality;
+    border: 3px solid rgb(0, 88, 60);
+    border-radius: 60px 60px 60px 60px;
 }
   
