@@ -19,3 +19,38 @@ class ImagenView(generic.ListView):
     def get_queryset(self):
         return Imagen.objects.all()
 
+
+class GamesView(generic.ListView):
+    template_name = 'games.html'
+    context_object_name= 'context_game'
+
+    def parorimpar(request):
+        """Odd or even function"""
+
+        if request.method == 'POST':
+            num = int(input("Escribe un Numero: "))
+
+            if num%2 == 0:
+                print(f"{num} Es Par")
+            else:
+                print(f"{num} Es Impar")
+        
+        return render(request, 'gtapp/games.html', {'title':'games'})
+
+
+    def palindromo(request):
+        """Game Palindromo"""
+
+        palabra = input("Escribe una palabra: ").upper()
+
+        invertida = palabra[::-1].lower()
+
+        if invertida == palabra:
+            print(f"{palabra} - {invertida} Es un Palindromo")
+        else:
+            print(f"{palabra} - {invertida} No es un Palindromo")
+        
+        return render(request, 'gtapp/games.html', {'title':'games'})
+    
+    def get_queryset(self):
+        return 
