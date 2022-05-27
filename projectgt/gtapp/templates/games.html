@@ -2,13 +2,30 @@
 {% load static %}
 
 {% block content %}
-    <div class="conteiner">
-        <div class="col">
-            <h1>Palindrome</h1>
-            <p>It allows us to know if a word is written the same way forward as backwards</p>
-            <input type="text" class="inputtext" placeholder="palabra" pattern="[a-z]">
-            <button type="button" class="button">Check</button>
-            <p>The Word <strong></strong>, <span></span> a Palindrome</p>
+    {% csrf_token %}
+    {% if context_game %}
+        <div class="conteiner">
+            <div class="col">
+                <h1>Odd or Even</h1>
+                <p>It allows us to know if the number entered is even or odd.</p>
+                <input type="text" id="{{ parorimpar.num }}" class="inputtext" placeholder="number" pattern="[0-9]">
+                <button type="button" class="button">Check</button>
+                <p>The number <strong></strong>, <strong></strong></p>
+            </div>
+            <div class="col">
+                <h1>Palindrome</h1>
+                <p>It allows us to know if a word is written the same way forward as backwards</p>
+                <input type="text" id="{{ palindrom.palabra }}" class="inputtext" placeholder="palabra" pattern="[a-z]">
+                <button type="button" class="button">Check</button>
+                <p>The Word <strong></strong>, <span></span> a Palindrome</p>
+            </div>
         </div>
+    {% else %}
+        <br> <br> <br>
+        <p>No Games are available</p>
+    {% endif %}
     </div>
+    <br> <br> <br>
+    <hr>
+    <a id="back" href="{% url 'gtapp:index' %}">Back to page main?</a>
 {% endblock content %}

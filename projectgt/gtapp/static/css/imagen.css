@@ -29,3 +29,8 @@ img {
 .col {
     padding: 30px 30px 30px 30px;
 }
+
+#back {
+    text-decoration: none;
+    color: rgb(149, 165, 165);
+}
