@@ -2,10 +2,10 @@
     display: inline-flex;
     justify-content: center;
 }
-.col {
+.content {
     background-color: lightblue;
     padding: 0px 0px 10px 5px;
-    max-width: 25%;
+    max-width: 50%;
     margin: 0 auto;
 }
 
