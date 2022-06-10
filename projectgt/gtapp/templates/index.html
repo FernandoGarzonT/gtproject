@@ -10,16 +10,25 @@
                     <li><a href="{% url 'gtapp:imagen' %}">Imagens</a></li>
                     <li><a href="">Videos</a></li>
                     <li><a href="">Music</a></li>
-                    <li><a href="{% url 'gtapp:games' %}">Games</a></li>
+                    <li><a href="{% url 'gtapp:games' %}">MiniGames</a></li>
                     <li><a href="">Posts</a></li>
-                    <li><a href="">Log In</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'gtapp:profile' %}">Profile</a></li>
+                        <li><a class="logout1" href="{% url 'gtapp:logout' %}">Log Out</a></li>
+                    {% else %}
+                        <li><a class="login1" href="{% url 'gtapp:login' %}">Log In</a></li>
+                    {% endif %} 
                 </ul>
             </nav>
         </div>
     </header>
     <div class="row" style="padding:30px;margin-top:30px;"> 
         {% csrf_token %}
+        {% if user.is_authenticated %}
+        <h1>&#10055; Welcome to GT APP {{ user.first_name }} {{ user.last_name }} &#10055;</h1>
+        {% else %}
         <h1>&#10055; Welcome to GT APP &#10055;</h1>
+    {% endif %} 
         <div class="container-img">
             <picture>        
                 <img src="{% static 'images/paisaje1.jpg' %}" alt="Paisaje">     

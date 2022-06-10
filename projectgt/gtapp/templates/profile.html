@@ -1,0 +1,40 @@
+{% extends "base_profile.html" %}
+
+{% block contenido  %}
+    <div id="main-profile">
+        <nav class="navbar navbar-inverse" role="navigation" style="margin-bottom: 6">
+            <ul>
+                <li><a class="active" href="{% url 'gtapp:index' %}">Home</a></li>
+                <li><a class="pestaña" href="#profile">User Data</a></li>
+                <li><a class="pestaña" href="#messages">Posted Messages</a></li> 
+                <li><a class="pestaña" href="#videos">Published Videos</a></li>
+                <li><a class="logout" href="{% url 'gtapp:logout' %}">Log Out</a></li>
+            </ul>
+        </nav>    
+    </div>
+        
+    <!-- <div id="profile" class="box">
+        <li><p>User Firts Name: {{ user.first_name }}</p></li>
+        <br> 
+        <li><p>User Last Name: {{ user.last_name }}</p></li>
+        <br>            
+        <li><p>User Email: {{ user.email }}</p></li>
+    </div>
+    <div id="messages" class="box"> 
+        <h3>Message Title</h3>
+        <p>
+            Los mensajes de texto, o SMS (servicio de mensajes cortos) son un método de comunicación que 
+            envía mensajes entre teléfonos móviles (SMS o SMPP) o desde un PC o un dispositivo portátil 
+            a un teléfono móvil (SMTP). La parte «corta» proviene del tamaño máximo de un mensaje de texto, 
+            que es de 160 caracteres (letras, números o símbolos del alfabeto latino) independientemente del 
+            teléfono, el proveedor o la tecnología.
+        </p>
+    </div>
+    <div id="videos" class="box">
+        <h3>Video Title </h3>
+        <p>El video digital (en España, vídeo digital) es una representación de imágenes en movimiento en 
+            la forma de datos digitales codificados, a diferencia del video analógico que representa estas 
+            imágenes mediante señales analógicas.
+        </p>
+    </div> -->
+{% endblock contenido  %}

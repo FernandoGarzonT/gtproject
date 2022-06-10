@@ -1,0 +1,13 @@
+{% extends "base_register.html" %}
+{% load static %}
+
+{% block content %}
+    <form action="{% url 'gtapp:index' %}" method="POST">{% csrf_token %}
+        <table>
+            {{ form.as_p }}
+        </table>
+        <button type="submit">Sign In</button>
+    </form> 
+    <br> <br>
+    <a href="{% url 'gtapp:index' %}">Back to Again?</a>
+{% endblock content %} 

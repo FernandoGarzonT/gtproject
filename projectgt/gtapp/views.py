@@ -1,7 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import generic
-from .models import Imagen
+from django.contrib.auth.models import User
+from .models import Imagen, Person
+from .forms import RegistrationForm
+
 
 
 class IndexView(generic.ListView):
@@ -20,32 +23,57 @@ class ImagenView(generic.ListView):
     def get_queryset(self):
         return Imagen.objects.all()
 
-  
-def palindromo(request):
-    """Palindrome function"""
-    if request.method == 'POST':
-        palabra = request.POST.get('palabra', '')
 
-        invertida = palabra[::-1]
+class GameView(generic.ListView):
+    template_name = 'games.html'
+    context_object_name= 'ct_games'
 
-        if invertida == palabra:
-            return HttpResponse("Is Palindrome")
-        else:
-            return HttpResponse("Not is Palindrome")
+    def palindromo(request):
+        """Palindrome function"""
+        if request.method == 'POST':
+            palabra = request.POST.get('palabra', '')
 
-    return render(request, 'games.html', )
+            invertida = palabra[::-1]
 
-def parorimpar(request):
-    """Odd or even function"""
+            if invertida == palabra:
+                return HttpResponse("Is Palindrome")
+            else:
+                return HttpResponse("Not is Palindrome")
 
-    if request.method == 'POST':
-        num = request.POST.get('num', '')
+        return render(request, 'games.html', palabra)
 
-        num = int(num)
+    def parorimpar(request):
+        """Odd or even function"""
 
-        if num%2 == 0:
-            return HttpResponse("It's Even")
-        else:
-            return HttpResponse("It's Odd")
-            
-    return render(request, 'games.html')
+        if request.method == 'POST':
+            num = request.POST.get('num', '')
+
+            num = int(num)
+
+            if num%2 == 0:
+                return HttpResponse(num + "It's Even")
+            else:
+                return HttpResponse(num + "It's Odd") 
+             
+        return render(request, 'games.html', num)
+
+    def get_queryset(self):
+        return self.parorimpar, self.palindromo
+    
+
+class RegistrationView(generic.CreateView):
+    model = User
+    template_name = 'registration.html'
+    context_object_name = 'context_registration'
+    form_class = RegistrationForm
+
+ 
+class ProfileView(generic.ListView):
+    """View Profile User"""
+
+    model = Person
+    template_name = 'profile.html'
+    
+
+   
+

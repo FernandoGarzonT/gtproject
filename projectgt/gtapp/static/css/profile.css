@@ -1,0 +1,42 @@
+body {
+    margin:0;
+}
+
+#main-profile {
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+    display: inline-flex;
+    align-items: center;
+    color: black;
+}
+
+li a {
+    text-decoration: none;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    padding: 0px 15px;
+}
+
+li a:hover {
+    color: red;
+}
+
+.active {
+    background-color: #04AA6D;
+  }
